@@ -21,7 +21,7 @@ const allColors = [
   '#EF767A', '#456990', '#49BEAA', '#49DCB1', '#EEB868', '#EF767A', '#456990',
   '#49BEAA', '#49DCB1', '#EEB868', '#EF767A',
 ];
-const [count, width, height] = [600, 30, 30];
+const [count, width, height] = [6, 30, 30];
 // indexed by visual position
 const layout = range(count).map(n => {
   const row = Math.floor(n / columns);
