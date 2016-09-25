@@ -1,5 +1,6 @@
 import React from 'react';
 import {Motion, spring} from '../../src/react-motion';
+import GSAP from '../../src/gsap/gsap-enhancer';
 import range from 'lodash.range';
 
 const springSetting1 = {stiffness: 180, damping: 10};
@@ -29,7 +30,7 @@ const layout = range(count).map(n => {
   return [width * col, height * row];
 });
 
-const Aniboard = React.createClass({
+const Aniboard = GSAP()(React.createClass({
   getInitialState() {
     return {
       mouse: [0, 0],
@@ -131,6 +132,7 @@ const Aniboard = React.createClass({
       </div>
     );
   },
-});
+}));
+
 
 export default Aniboard;
