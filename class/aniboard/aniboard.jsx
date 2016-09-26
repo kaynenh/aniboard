@@ -84,6 +84,7 @@ const Aniboard = GSAP()(React.createClass({
 
   render() {
     const {order, lastPress, isPressed, mouse} = this.state;
+    let initialized = false;
     return (
       <div className="stage">
         {order.map((_, key) => {
@@ -99,7 +100,11 @@ const Aniboard = GSAP()(React.createClass({
               scale: spring(1.2, springSetting1),
             };
           } else {
-            [x, y] = layout[visualPosition];
+            //[x, y] = layout[visualPosition];
+            [x, y] = mouse;
+            if (!initialized) {
+              x = x+(order.indexOf(key)*40);
+            }
             style = {
               translateX: spring(x, springSetting2),
               translateY: spring(y, springSetting2),
@@ -131,6 +136,7 @@ const Aniboard = GSAP()(React.createClass({
         </div>
       </div>
     );
+    initialized = true;
   },
 }));
 
