@@ -61,10 +61,10 @@ const Aniboard = GSAP()(React.createClass({
     const {order, lastPress, isPressed, delta: [dx, dy]} = this.state;
     if (isPressed) {
       const mouse = [pageX - dx, pageY - dy];
-      const col = clamp(Math.floor(mouse[0] / width), 0, 2);
+      /*const col = clamp(Math.floor(mouse[0] / width), 0, 2);
       const row = clamp(Math.floor(mouse[1] / height), 0, Math.floor(count / columns));
-      const index = row * 3 + col;
-      const newOrder = reinsert(order, order.indexOf(lastPress), index);
+      const index = row * 3 + col;*/
+      const newOrder = reinsert(order, order.indexOf(lastPress), 1);
       this.setState({mouse: mouse, order: newOrder});
     }
   },
